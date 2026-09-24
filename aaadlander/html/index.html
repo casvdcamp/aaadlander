@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Mission Control AAAD.4</title>
+        <link href="../css/stylesheet.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+        <script defer src="../javascript/websocket.js"></script>
+        <script defer src="../javascript/script.js"></script>
+        <script defer src="../javascript/camera.js"></script>
+    </head>
+    <body>
+        <div class="dashboard">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <img src="../team-logo.png" alt="Team AAAD.4" class="team-logo">
+                    <div class="topbar-title">MISSION CONTROLE AAAD.4</div>
+                </div>
+                <div class="topbar-info">
+                    <div class="info-card">
+                      <span class="info-label">Helling</span>
+                      <span class="info-value">
+                             PITCH: <span id="pitch-value">--</span>°, 
+                             ROLL: <span id="roll-value">--</span>°
+                     </span>
+                    </div>
+                </div>
+            </header>
+            <main class="content">
+                <section class="control-panel">
+                    <div class="panel-card">
+                        <div class="panel-title">Besturing</div>
+                        <div class="control-grid">
+                            <div></div>
+                            <button id="vooruit" class="control-button key">W</button>
+                            <div></div>
+                            <button id="links" class="control-button key">A</button>
+                            <button id="stop" class="control-button stop-button">STOP</button>
+                            <button id="rechts" class="control-button key">D</button>
+                            <div></div>
+                            <button id="achteruit" class="control-button key">S</button>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="panel-card status-card">
+                        <div class="status-label">STATUS</div>
+                        <div id="movementStatus" class="status-value connected">CONNECTED</div>
+                        <div id="tilt-warning" class="tilt-warning" role="alert">PAS OP kantel gevaar!!!</div>
+                    </div>
+                </section>
+                <section class="camera-panel">
+                    <div class="camera-card">
+                        <div class="camera-header">Live rover camera</div>
+                        <video id="gopro-video" autoplay muted controls></video>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
